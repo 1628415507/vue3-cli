@@ -2,7 +2,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-17 16:36:23
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-17 17:21:48
+ * @LastEditTime: 2022-11-17 17:47:54
  * @Description:
  */
 module.exports = {
@@ -13,9 +13,12 @@ module.exports = {
   },
   extends: [
     'plugin:vue/essential',
-    'eslint:recommended',
+    // 'eslint:recommended',
     // "airbnb-base"
-    'plugin:vue/vue3-essential'
+    'plugin:vue/vue3-essential',
+    // 添加 prettier 插件,这样，我们在执行 eslint --fix 命令时，
+    // ESLint 就会按照 Prettier 的配置规则来格式化代码，解决prettier/ESLint二者冲突问题。
+    'plugin:prettier/recommended'
     // "plugin:@typescript-eslint/recommended"
   ],
   overrides: [],
@@ -39,10 +42,11 @@ module.exports = {
     quotes: [2, 'single'], // 使用单引号
     // 'vue/html-closing-bracket-newline': 'off', // 不强制换行
     // 'vue/singleline-html-element-content-newline': 'off', // 不强制换行
+    // vue template模板元素第一行最多5个属性
     // 'vue/max-attributes-per-line': ['error', {
     //   singleline: { max: 5 },
     //   multiline: { max: 5 }
-    // }] // vue template模板元素第一行最多5个属性
+    // }]
     // 其它的规则可以去eslint查看，根据自己需要进行添加
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
