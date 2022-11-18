@@ -1,5 +1,12 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
+
 # npx eslint src/App.vue
-# npm run lint:fix需在package.json的scripts中配置："lint:fix": "eslint --fix --ext .vue,.js,.ts src"
-npm run lint:fix
+
+### npm run lint:fix需在package.json的scripts中配置："lint:fix": "eslint --fix --ext .vue,.js,.ts src"
+### npm run lint:fix 校验所有文件
+# npm run lint:fix
+
+### npx lint-staged：只对 git 暂存区的 .vue、.js、.ts 文件执行 eslint --fix。
+npx lint-staged
+

@@ -2,7 +2,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-17 16:00:08
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-17 16:46:07
+ * @LastEditTime: 2022-11-18 14:02:07
  * @Description:
 -->
 
@@ -36,7 +36,7 @@ import { ref } from 'vue'
 
 defineProps<{ msg: string }>()
 
-const count = ref(0)
+let count = ref(0)
 </script>
 
 <style scoped>
