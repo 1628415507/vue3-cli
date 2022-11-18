@@ -1,4 +1,19 @@
 #!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-# 执行./verifyCommit.js文件中的内容
-node ./verifyCommit.js
+# 对commit的文本信息进行校验
+# 【方法一】
+MSG=`awk '{printf("%s",$0)}' $1`
+if [[ $MSG =~ ^(revert: )?(create|feat|fix|conflict|style|save|stash|delete|tool|docs|dx|refactor|revert|perf|test|workflow|build|ci|chore|types|hotfix|update|wip|release)(\(.+\))?(:|：).*$ ]]
+then
+	# echo -e "\033[32m Success: git commit 校验通过! \033[0m"
+else
+  echo -e "\033[31m Error: 请遵循  type(scope)：message 的格式提交 \033[m"
+	echo -e "\033[31m Error: type 必须为以下类型之一: [feat,fix,docs,style,delete,refactor,test,chore, ...] \033[m"
+	echo -e "\033[31m 详见 .husky/verifyCommit.js文件 \033[m"
+  echo -e "\033[31m 例如: feat(模块名称): 文字描述 \033[m"
+	exit 1
+fi
+
+# 【方法二(会报错？？)】
+# . "$(dirname -- "$0")/_/husky.sh"
+# # 执行./verifyCommit.js文件中的内容
+# node .husky/verifyCommit.ts
