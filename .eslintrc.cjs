@@ -2,7 +2,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-17 16:36:23
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-17 18:20:23
+ * @LastEditTime: 2022-11-18 17:25:14
  * @Description:
  */
 module.exports = {
@@ -25,6 +25,7 @@ module.exports = {
   // "parser": "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: 'latest',
+    // 默认的eslint配置无法检测ts的语法，有些关键字会报错,解决interface关键字等识别报错的问题
     parser: '@typescript-eslint/parser',
     sourceType: 'module'
   },

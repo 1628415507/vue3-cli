@@ -2,8 +2,8 @@
  * @Author: Hongzf
  * @Date: 2022-11-18 15:30:19
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-18 16:48:01
- * @Description:
+ * @LastEditTime: 2022-11-18 18:07:25
+ * @Description: 参考地址 https://www.jianshu.com/p/7be4fcd4f78d
  */
 //从.git/COMMIT_EDITMSG文件中读取commit的内容
 const msg = require('fs').readFileSync('.git/COMMIT_EDITMSG', 'utf-8').trim()
@@ -18,12 +18,12 @@ if (!commitRE.test(msg)) {
   console.log('2.git commit校验中')
   console.log()
   console.log(
-    `${chalk.bgRed.white(' ERROR ')} ${chalk.bold.red(`无效的commit提交格式`)}\n\n` +
+    `${chalk.bgRed.white(' ERROR ')} ${chalk.bold.red('无效的commit提交格式')}\n\n` +
       chalk.red(
-        `请遵循` +
-          chalk.underline.red(`type：message`) +
-          `的格式提交. 例如: ` +
-          chalk.underline.red(`git commit -m "feat：描述文字"\n`)
+        '请遵循' +
+          chalk.underline.red('type：message') +
+          '的格式提交. 例如: ' +
+          chalk.underline.red('git commit -m "feat：描述文字"\n')
       )
   )
   console.table([
@@ -94,8 +94,8 @@ if (!commitRE.test(msg)) {
   ])
   console.log(
     chalk.red(
-      `\n提示：文字描述不超过50个字，推荐以动词开头：创建、修复、完成、增加、删除等` +
-        `\n\n更多内容详见 .husky/verifyCommit.js文件 \n`
+      '\n提示：文字描述不超过50个字，推荐以动词开头：创建、修复、完成、增加、删除等' +
+        '\n\n更多内容详见 .husky/verifyCommit.js文件 \n'
     )
   )
   process.exit(1)
