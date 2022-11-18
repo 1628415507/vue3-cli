@@ -2,12 +2,12 @@
  * @Author: Hongzf
  * @Date: 2022-11-17 16:00:08
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-17 17:49:01
+ * @LastEditTime: 2022-11-18 14:31:38
  * @Description:
  */
 import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import '@/style.css'
+import App from '@/App.vue'
 
 let x: number = 1
 console.log('【 x 】-10', x)
