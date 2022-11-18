@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+# npx eslint src/App.vue
+# npm run lint:fix需在package.json的scripts中配置："lint:fix": "eslint --fix --ext .vue,.js,.ts src"
+npm run lint:fix

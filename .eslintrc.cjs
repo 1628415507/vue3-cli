@@ -2,7 +2,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-17 16:36:23
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-17 17:47:54
+ * @LastEditTime: 2022-11-17 18:20:23
  * @Description:
  */
 module.exports = {
@@ -47,8 +47,8 @@ module.exports = {
     //   singleline: { max: 5 },
     //   multiline: { max: 5 }
     // }]
-    // 其它的规则可以去eslint查看，根据自己需要进行添加
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+    // 其它的规则可以去eslint查看，根据自己需要进行添加
   }
 }
