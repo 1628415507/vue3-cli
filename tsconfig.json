@@ -28,7 +28,7 @@
         仅在 env.d.ts 中加入 declare module '*.js'; 模块定义即可
       3.总结：和 "include": ["src/**\/*.js"] 没有任何关系
     */
-    // "allowJs": true, // 允许编译器编译JS，JSX文件
+    "allowJs": true, // 允许编译器编译JS，JSX文件
     // "typeRoots": [
     //   "node_modules/@types" // 默认会从'node_modules/@types'路径去引入声明文件
     // ],
