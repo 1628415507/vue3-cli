@@ -2,7 +2,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-17 16:00:08
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-21 09:53:36
+ * @LastEditTime: 2022-11-21 11:43:29
  * @Description:
 -->
 
@@ -19,6 +19,9 @@
     <router-link to="/home">路由跳转</router-link>
     <hr />
     <router-link to="/store">store跳转</router-link>
+    <hr />
+    <router-link to="/request">Http</router-link>
+    <hr />
 
     <router-view></router-view>
   </div>
