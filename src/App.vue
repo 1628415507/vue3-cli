@@ -17,6 +17,9 @@
     <HelloWorld msg="Vite + Vue" />
     <hr />
     <router-link to="/home">路由跳转</router-link>
+    <hr />
+    <router-link to="/store">store跳转</router-link>
+
     <router-view></router-view>
   </div>
 </template>

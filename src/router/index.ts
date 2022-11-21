@@ -18,7 +18,12 @@ export const routes: Array<RouteRecordRaw> = [
   {
     path: '/router',
     name: 'Router',
-    component: () => import('@/views/router-page.vue')
+    component: () => import('@/views/demo/router-demo.vue')
+  },
+  {
+    path: '/store',
+    name: 'Store',
+    component: () => import('@/views/demo/store-demo.vue')
   },
   // 替代vue2中的'*'通配符路径
   // { path: '/:pathMatch(.*)*', redirect: '/' }
