@@ -2,7 +2,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-17 16:00:08
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-18 19:12:14
+ * @LastEditTime: 2022-11-21 09:53:36
  * @Description:
 -->
 
@@ -15,6 +15,9 @@
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
     <HelloWorld msg="Vite + Vue" />
+    <hr />
+    <router-link to="/home">路由跳转</router-link>
+    <router-view></router-view>
   </div>
 </template>
 <script setup lang="ts">

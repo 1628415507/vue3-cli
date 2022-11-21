@@ -2,7 +2,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-18 15:30:19
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-18 19:14:23
+ * @LastEditTime: 2022-11-21 10:17:20
  * @Description: 参考地址 https://www.jianshu.com/p/7be4fcd4f78d
  */
 //从.git/COMMIT_EDITMSG文件中读取commit的内容
@@ -16,7 +16,7 @@
 // console.log('1.git commit开始校验')
 // if (!commitRE.test(msg)) {
 //   console.log('2.git commit校验中')
-//   console.log()
+  // console.log()
 //   console.log(
 //     `${chalk.bgRed.white(' ERROR ')} ${chalk.bold.red('无效的commit提交格式')}\n\n` +
 //       chalk.red(

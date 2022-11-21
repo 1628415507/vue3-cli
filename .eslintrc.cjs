@@ -2,7 +2,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-17 16:36:23
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-18 17:25:14
+ * @LastEditTime: 2022-11-21 09:58:47
  * @Description:
  */
 module.exports = {
@@ -41,6 +41,8 @@ module.exports = {
     indent: ['error', 2], // 缩进2格
     'no-mixed-spaces-and-tabs': 'error', // 不能空格与tab混用
     quotes: [2, 'single'], // 使用单引号
+    // 关闭名称校验（使用大驼峰命名方式或者用“-”连接单词）
+    // 'vue/multi-word-component-names': 'off',
     // 'vue/html-closing-bracket-newline': 'off', // 不强制换行
     // 'vue/singleline-html-element-content-newline': 'off', // 不强制换行
     // vue template模板元素第一行最多5个属性
