@@ -1,3 +1,10 @@
+/*
+ * @Description:
+ * @Author: Hongzf
+ * @Date: 2022-11-21 18:11:28
+ * @LastEditors: Hongzf
+ * @LastEditTime: 2022-11-25 15:24:25
+ */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
@@ -7,6 +14,14 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve('./src')
+    }
+  },
+  // 配置公共样式文件
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "./src/styles/index.scss";'
+      }
     }
   },
   base: './', // 打包路径

@@ -3,7 +3,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-25 09:43:18
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-25 11:34:46
+ * @LastEditTime: 2022-11-25 13:44:04
  */
 
 import { RouteRecordRaw } from 'vue-router'
@@ -12,7 +12,7 @@ import Layout from '@/layout/index.vue' // 引入布局页面
 const asyncRoutes: Array<RouteRecordRaw> = [
   // 基础布局
   {
-    path: '/',
+    path: '/home',
     component: Layout,
     meta: { title: '首页', hidden: true }
   },

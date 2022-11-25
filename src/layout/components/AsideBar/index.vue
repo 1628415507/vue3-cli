@@ -3,11 +3,12 @@
  * @Author: Hongzf
  * @Date: 2022-11-23 17:57:04
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-24 18:24:45
+ * @LastEditTime: 2022-11-25 15:26:36
 -->
 
 <template>
   <div class="aside-wrap">
+    <!-- <div class="logo">logo</div> -->
     <el-scrollbar class="scrollbar-wrap">
       <!-- :default-openeds="['1', '3']" -->
       <el-menu class="menu-wrap" :collapse="isCollapse" @open="handleOpen" @close="handleClose">
@@ -41,15 +42,7 @@ const isCollapse = computed(() => {
 const menuList = computed(() => {
   return store.state.app.menu
 })
-console.log('【 menuList 】-41', menuList)
-// reactive([
-//   {
-//     title: '菜单1',
-//     index: '1',
-//     children: [{ title: '菜单1-1', index: '1-1', children: [{ title: '菜单1-1-1' }] }]
-//   },
-//   { title: '菜单2', index: '2', children: [{ title: '菜单2-1' }] }
-// ])
+// console.log('【 menuList 】-41', menuList)
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
 }
@@ -58,9 +51,9 @@ const handleClose = (key: string, keyPath: string[]) => {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .aside-wrap {
-  background: var(--el-color-primary-light-8);
+  background: $themeColor;
   min-height: 98vh; // calc(100vh - 20px);;
   .scrollbar-wrap {
     overflow-x: hidden !important;

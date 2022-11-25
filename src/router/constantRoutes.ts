@@ -1,9 +1,9 @@
 /*
- * @Description: 默认的路由，如登录等基本页面
+ * @Description: 默认的路由，如登录、404等基本页面
  * @Author: Hongzf
  * @Date: 2022-11-25 09:42:54
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-25 11:34:11
+ * @LastEditTime: 2022-11-25 11:52:19
  */
 import { RouteRecordRaw } from 'vue-router'
 import Layout from '@/layout/index.vue' // 引入布局页面
@@ -12,7 +12,7 @@ const constantRoutes: Array<RouteRecordRaw> = [
   // 基础布局
   {
     path: '/',
-    component: Layout,
+    redirect: '/login', //重定向到登录页面
     meta: { title: '首页', hidden: true }
   },
   {

@@ -3,7 +3,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-21 18:51:07
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-24 17:37:13
+ * @LastEditTime: 2022-11-25 16:15:39
  */
 // 定义数据类型
 export interface AppState {
@@ -36,6 +36,7 @@ const mutations = {
   },
   // 保存菜单值
   SET_MENU(state: AppState, value: any) {
+    // console.log('【 SET_MENU 】-39', value)
     // 我们直接操作state.count就可以完成数据的修改。
     state.menu = value
   }
