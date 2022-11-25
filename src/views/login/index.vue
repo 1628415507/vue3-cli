@@ -1,15 +1,15 @@
 <!--
+ * @Description: 登录页
  * @Author: Hongzf
- * @Date: 2022-11-17 16:00:08
+ * @Date: 2022-11-25 09:22:30
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-25 10:53:01
- * @Description:
+ * @LastEditTime: 2022-11-25 11:37:07
 -->
+
 <template>
-  <router-view></router-view>
+  <div>登录</div>
 </template>
 <script setup lang="ts">
-// TODO: 先写在这里，后面放到登录那边操作
 import { onMounted } from 'vue'
 import { useStore } from 'vuex'
 // import { useRoute } from 'vue-router'

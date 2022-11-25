@@ -2,7 +2,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-17 16:36:23
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-21 09:58:47
+ * @LastEditTime: 2022-11-23 17:58:39
  * @Description:
  */
 module.exports = {
@@ -51,7 +51,20 @@ module.exports = {
     //   multiline: { max: 5 }
     // }]
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     // 其它的规则可以去eslint查看，根据自己需要进行添加
+    // "vue/max-attributes-per-line": [2, {
+    //   "singleline": 10,
+    //   "multiline": {
+    //     "max": 1,
+    //     "allowFirstLine": false
+    //   }
+    // }],
+    // "vue/singleline-html-element-content-newline": "off",
+    // "vue/multiline-html-element-content-newline": "off",
+    // "vue/name-property-casing": ["error", "PascalCase"],
+    // "vue/no-v-html": "off",
+    // 文件命名需多个单词
+    'vue/multi-word-component-names': 'off'
   }
 }

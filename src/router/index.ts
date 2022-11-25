@@ -1,42 +1,23 @@
+/*
+ * @Author: Hongzf
+ * @Date: 2022-11-21 18:51:07
+ * @LastEditors: Hongzf
+ * @LastEditTime: 2022-11-25 11:36:03
+ * @Description:
+ */
 // src/router/index.ts
 
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-export const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    name: 'app',
-    meta: {
-      title: 'app'
-    },
-    component: () => import('@/App.vue')
-  },
-  {
-    path: '/home',
-    name: 'Home',
-    component: () => import(/* webpackChunkName: "Home" */ '@/views/home-page.vue')
-  },
-  {
-    path: '/router',
-    name: 'Router',
-    component: () => import('@/views/demo/router-demo.vue')
-  },
-  {
-    path: '/store',
-    name: 'Store',
-    component: () => import('@/views/demo/store-demo.vue')
-  },
-  {
-    path: '/request',
-    name: 'Request',
-    component: () => import('@/views/demo/http-demo.vue')
-  },
-  // 替代vue2中的'*'通配符路径
-  // { path: '/:pathMatch(.*)*', redirect: '/' }
-  { path: '/', redirect: { name: 'Home' } }
-]
+import constantRoute from './constantRoutes' // 默认基本页面的路由
+import asyncRoute from './asyncRoutes' // 异步请求的路由
+
+// 默认的路由
+export const constantRoutes: Array<RouteRecordRaw> = constantRoute
+// 异步请求的路由
+export const asyncRoutes: Array<RouteRecordRaw> = asyncRoute
 
 const router = createRouter({
   history: createWebHashHistory(), // history 模式则使用 createWebHistory()
-  routes
+  routes: constantRoute.concat(asyncRoutes) //设置路由
 })
 export default router

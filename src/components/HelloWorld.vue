@@ -2,7 +2,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-17 16:00:08
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-21 13:48:40
+ * @LastEditTime: 2022-11-24 16:48:32
  * @Description:
 -->
 
@@ -34,9 +34,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-defineProps<{ msg: string }>()
-
 let count = ref(0)
+let msg = ref(0)
 </script>
 
 <style scoped>

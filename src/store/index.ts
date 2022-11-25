@@ -1,4 +1,14 @@
+/*
+ * @Description:
+ * @Author: Hongzf
+ * @Date: 2022-11-21 18:51:07
+ * @LastEditors: Hongzf
+ * @LastEditTime: 2022-11-24 13:45:31
+ */
 import { createStore } from 'vuex'
+// 引入app文件模块
+import app from '@/store/modules/app'
+console.log('【 app 】-10', app)
 
 const defaultState = {
   count: 0
@@ -6,6 +16,9 @@ const defaultState = {
 
 // Create a new store instance.
 export default createStore({
+  modules: {
+    app
+  },
   state() {
     return defaultState
   },
