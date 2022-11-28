@@ -3,18 +3,26 @@
  * @Author: Hongzf
  * @Date: 2022-11-25 09:42:54
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-25 11:52:19
+ * @LastEditTime: 2022-11-28 11:22:22
  */
 import { RouteRecordRaw } from 'vue-router'
 import Layout from '@/layout/index.vue' // 引入布局页面
 
 const constantRoutes: Array<RouteRecordRaw> = [
-  // 基础布局
-  {
-    path: '/',
-    redirect: '/login', //重定向到登录页面
-    meta: { title: '首页', hidden: true }
-  },
+  // 基础布局 TODO
+  // {
+  //   path: '/home',
+  //   component: Layout,
+  //   // hidden: true,
+  //   meta: { title: '首页', hidden: true },
+  //   children: [
+  //     {
+  //       path: '/home',
+  //       meta: { title: '', hidden: true },
+  //       component: () => import('@/views/home/index.vue')
+  //     }
+  //   ]
+  // },
   {
     path: '/login',
     component: () => import('@/views/login/index.vue'),

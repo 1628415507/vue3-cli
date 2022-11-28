@@ -3,7 +3,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-25 09:22:30
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-25 16:17:26
+ * @LastEditTime: 2022-11-28 14:13:19
 -->
 <template>
   <div class="login-wrap">
@@ -60,9 +60,11 @@ const submitForm = (formEl: FormInstance | undefined) => {
   if (!formEl) return
   formEl.validate((valid) => {
     if (valid) {
-      // 获取和保存菜单数据 // TODO:页面刷新就没了
+      // 获取和保存菜单数据
+      // TODO:页面刷新就没了，如果需要刷新还能有，就需要重新获取接口或存到localStorage
       console.log('页面跳转失败')
       store.commit('SET_MENU', asyncRoutes)
+      // localStorage.setItem('menus', JSON.stringify(asyncRoutes))
       // 跳转页面
       router.push('./home').catch((err) => {})
       console.log('submit!')

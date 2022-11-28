@@ -3,22 +3,31 @@
  * @Author: Hongzf
  * @Date: 2022-11-25 09:43:18
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-25 13:44:04
+ * @LastEditTime: 2022-11-28 11:16:33
  */
 
 import { RouteRecordRaw } from 'vue-router'
 import Layout from '@/layout/index.vue' // 引入布局页面
 
 const asyncRoutes: Array<RouteRecordRaw> = [
-  // 基础布局
+  // 首页
   {
     path: '/home',
     component: Layout,
-    meta: { title: '首页', hidden: true }
+    redirect: '/home', //重定向到第一个菜单
+    meta: { title: '首页', hidden: true },
+    children: [
+      {
+        path: '/home',
+        meta: { title: '', hidden: true },
+        component: () => import('@/views/home/index.vue')
+      }
+    ]
   },
-  //
+  // demo
   {
     path: '/demo',
+    redirect: '/router', //重定向到第一个菜单
     component: Layout,
     meta: { title: '测试 demo', hidden: true },
     children: [
@@ -43,6 +52,7 @@ const asyncRoutes: Array<RouteRecordRaw> = [
   // 测试多级菜单
   {
     path: '/level',
+    redirect: '/level-1', //重定向到第一个菜单
     component: Layout,
     meta: { title: '测试多级菜单', hidden: true },
     children: [
@@ -54,11 +64,17 @@ const asyncRoutes: Array<RouteRecordRaw> = [
       {
         path: '/level-2',
         meta: { title: '菜单1-2' },
+        redirect: '/level-2-1', //重定向到第一个菜单
         component: () => import('@/views/demo/router-demo.vue'),
         children: [
           {
             path: '/level-2-1',
-            meta: { title: '菜单1-1-2' },
+            meta: { title: '菜单1-2-1' },
+            component: () => import('@/views/demo/router-demo.vue')
+          },
+          {
+            path: '/level-2-1',
+            meta: { title: '菜单1-2-2' },
             component: () => import('@/views/demo/router-demo.vue')
           }
         ]

@@ -3,13 +3,14 @@
  * @Author: Hongzf
  * @Date: 2022-11-23 18:17:12
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-24 18:32:35
+ * @LastEditTime: 2022-11-28 11:18:24
 -->
 <template>
   <div :class="[isCollapse ? 'collapse-mode' : 'expand-mode', { 'first-level': isFirstLevel }]">
-    <!-- 无下级菜单 -->
-    <template v-if="!item.children">
+    <!-- 无下级菜单或只有一个子菜单，则将子菜单作为当前级菜单 -->
+    <template v-if="!item.children || item.children.length === 1">
       <el-menu-item :index="item.path" @click="handleRouter(item.path)">
+        <!-- 一级菜单才显示菜单图标 -->
         <el-icon v-if="isFirstLevel"><IconMenu /></el-icon>
         <span>{{ title }}</span>
       </el-menu-item>
