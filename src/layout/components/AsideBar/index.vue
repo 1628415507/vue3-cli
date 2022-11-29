@@ -3,12 +3,14 @@
  * @Author: Hongzf
  * @Date: 2022-11-23 17:57:04
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-28 09:48:38
+ * @LastEditTime: 2022-11-29 15:56:42
 -->
 
 <template>
   <div class="aside-wrap">
+    <!-- LOGO -->
     <!-- <div class="logo">logo</div> -->
+    <!-- 菜单列表 -->
     <el-scrollbar class="scrollbar-wrap">
       <!-- :default-openeds="['1', '3']"  @close="handleClose" @open="handleOpen"-->
       <el-menu class="menu-wrap" :collapse="isCollapse" :default-active="activeMenu">
@@ -27,18 +29,16 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive, computed, defineProps } from 'vue'
-import MenuItem from './MenuItem.vue'
+import { computed } from 'vue'
 import { useStore } from 'vuex'
 import { useRoute } from 'vue-router'
+import MenuItem from './MenuItem.vue'
 
 const store = useStore()
-// 获取菜单数据
+// 获取菜单数据(即动态路由)
 const menuList = computed(() => {
-  return store.state.app.menu
+  return store.state.app.dynamicRoutes
 })
-// console.log('【 menuList 】-41', menuList)
-
 // 获取菜单列表的伸缩状态
 const sidebar = computed(() => {
   return store.state.app.sidebar
@@ -51,7 +51,6 @@ const isCollapse = computed(() => {
 const curRoute = useRoute()
 const activeMenu = computed(() => {
   const { path } = curRoute
-  console.log('【 path 】-62', path)
   return path
 })
 
@@ -77,8 +76,4 @@ const activeMenu = computed(() => {
     }
   }
 }
-
-// .layout-container-demo .el-menu {
-//   border-right: none;
-// }
 </style>

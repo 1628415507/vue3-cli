@@ -3,7 +3,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-23 18:06:18
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-28 10:14:15
+ * @LastEditTime: 2022-11-29 14:19:18
 -->
 
 <template>
@@ -54,7 +54,7 @@ function handleSidebar() {
 const router = useRouter() // useRoute相当于以前的this.$route
 function logout() {
   router.push('./login').catch((err) => {
-    console.log('页面跳转失败')
+    console.log('退出登录跳转失败')
   })
 }
 </script>

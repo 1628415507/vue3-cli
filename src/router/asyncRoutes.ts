@@ -3,7 +3,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-25 09:43:18
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-28 11:16:33
+ * @LastEditTime: 2022-11-29 16:19:26
  */
 
 import { RouteRecordRaw } from 'vue-router'
@@ -73,7 +73,7 @@ const asyncRoutes: Array<RouteRecordRaw> = [
             component: () => import('@/views/demo/router-demo.vue')
           },
           {
-            path: '/level-2-1',
+            path: '/level-2-2',
             meta: { title: '菜单1-2-2' },
             component: () => import('@/views/demo/router-demo.vue')
           }

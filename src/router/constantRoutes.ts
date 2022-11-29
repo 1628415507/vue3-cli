@@ -1,9 +1,9 @@
 /*
- * @Description: 默认的路由，如登录、404等基本页面
+ * @Description: 固定的路由，跟用户权限无关的菜单，例如 404 页面、首页等
  * @Author: Hongzf
  * @Date: 2022-11-25 09:42:54
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-28 11:22:22
+ * @LastEditTime: 2022-11-29 11:12:14
  */
 import { RouteRecordRaw } from 'vue-router'
 import Layout from '@/layout/index.vue' // 引入布局页面
@@ -23,6 +23,11 @@ const constantRoutes: Array<RouteRecordRaw> = [
   //     }
   //   ]
   // },
+  {
+    path: '/',
+    redirect: '/login',
+    meta: { title: '登录', hidden: true }
+  },
   {
     path: '/login',
     component: () => import('@/views/login/index.vue'),

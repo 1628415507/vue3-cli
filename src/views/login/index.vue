@@ -3,7 +3,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-25 09:22:30
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-28 14:13:19
+ * @LastEditTime: 2022-11-29 14:19:32
 -->
 <template>
   <div class="login-wrap">
@@ -28,15 +28,11 @@
 </template>
 
 <script lang="ts" setup>
-import { reactive, ref, onMounted } from 'vue'
+import { reactive, ref } from 'vue'
 import type { FormInstance } from 'element-plus'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 import { asyncRoutes } from '@/router'
-// 表单
-const loginFormRef = ref<FormInstance>()
-const router = useRouter() // useRoute相当于以前的this.$route
-const store = useStore()
 
 // 定义表单数据
 const loginForm = reactive({
@@ -56,20 +52,24 @@ const rules = reactive({
   password: [{ validator: validatePass, trigger: 'blur' }]
 })
 // 提交表单
+const loginFormRef = ref<FormInstance>()
+const router = useRouter() // useRoute相当于以前的this.$route
+const store = useStore()
 const submitForm = (formEl: FormInstance | undefined) => {
   if (!formEl) return
   formEl.validate((valid) => {
     if (valid) {
       // 获取和保存菜单数据
-      // TODO:页面刷新就没了，如果需要刷新还能有，就需要重新获取接口或存到localStorage
-      console.log('页面跳转失败')
-      store.commit('SET_MENU', asyncRoutes)
+      // store.commit('SET_ROUTES', asyncRoutes)
+      // 菜单数据存vuex页面刷新就没了，2种解决方法：
+      // ① 刷新之后重新获取接口（可以在路由守卫那边处理）https://www.jb51.net/article/256122.htm
+      // ② 或者存到localStorage
       // localStorage.setItem('menus', JSON.stringify(asyncRoutes))
       // 跳转页面
       router.push('./home').catch((err) => {})
-      console.log('submit!')
+      console.log('登录成功!')
     } else {
-      console.log('error submit!')
+      console.log('登录失败!')
       return false
     }
   })

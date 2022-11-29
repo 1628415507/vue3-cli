@@ -3,14 +3,14 @@
  * @Author: Hongzf
  * @Date: 2022-11-23 18:17:12
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-28 11:18:24
+ * @LastEditTime: 2022-11-29 15:54:12
 -->
 <template>
   <div :class="[isCollapse ? 'collapse-mode' : 'expand-mode', { 'first-level': isFirstLevel }]">
     <!-- 无下级菜单或只有一个子菜单，则将子菜单作为当前级菜单 -->
     <template v-if="!item.children || item.children.length === 1">
       <el-menu-item :index="item.path" @click="handleRouter(item.path)">
-        <!-- 一级菜单才显示菜单图标 -->
+        <!-- 一级菜单显示菜单图标 -->
         <el-icon v-if="isFirstLevel"><IconMenu /></el-icon>
         <span>{{ title }}</span>
       </el-menu-item>
@@ -20,6 +20,7 @@
     <el-sub-menu v-else :index="item.path">
       <!-- 菜单标题 -->
       <template #title>
+        <!-- 一级菜单显示图标 -->
         <el-icon v-if="isFirstLevel"><IconMenu /></el-icon>
         <span>{{ title }}</span>
       </template>
@@ -41,8 +42,8 @@
 <script lang="ts" setup>
 import { Menu as IconMenu } from '@element-plus/icons-vue'
 import { ref, reactive, defineProps, PropType } from 'vue'
-
 import { useRouter } from 'vue-router'
+
 // props
 let props = defineProps({
   item: {
@@ -64,13 +65,12 @@ let props = defineProps({
 })
 const isCollapse = ref(props.isCollapse)
 const item = reactive(props.item)
-const title = item.meta?.title
-console.log('【 item 】-67', item.meta)
+const title = item.meta?.title || ''
 // 页面跳转
 const router = useRouter() // useRoute相当于以前的this.$route
 function handleRouter(path: string) {
   router.push(path).catch((err) => {
-    console.log('页面跳转失败', path)
+    console.log('MenuItem.vue-跳转失败', path, err)
   })
 }
 </script>

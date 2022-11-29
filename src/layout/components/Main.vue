@@ -6,7 +6,12 @@
  * @LastEditTime: 2022-11-24 17:39:13
 -->
 <template>
-  <keep-alive>
+  <!-- <keep-alive>
     <router-view />
-  </keep-alive>
+  </keep-alive> -->
+  <router-view v-slot="{ Component }">
+    <keep-alive>
+      <component :is="Component" />
+    </keep-alive>
+  </router-view>
 </template>

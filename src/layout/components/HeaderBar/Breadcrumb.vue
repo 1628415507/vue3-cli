@@ -3,7 +3,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-25 17:15:35
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-28 10:59:04
+ * @LastEditTime: 2022-11-29 16:53:26
 -->
 <template>
   <el-breadcrumb :separator-icon="ArrowRight">
@@ -30,7 +30,6 @@ function handleLink(item: any) {
     router.push(redirect)
     return
   }
-  console.log('【 item 】-34', item)
   router.push(path)
 }
 // 因为 当被点击后，需要把 to （目标路由的链接，类型都是RouteLocationRaw），传到router.push()里面
@@ -38,20 +37,15 @@ function handleLink(item: any) {
 // 获取面包屑数据
 let breadcrumbs: Ref<RouteLocationMatched[]> = ref([])
 const curRoute = useRoute()
-console.log('【 curRoute 】-31', curRoute)
 const getBreadcrumb = () => {
   // 利用route.matched可以得到单个匹配的路径
   let matchedList = curRoute.matched.filter((item) => item.meta && item.meta.title)
-  console.log('【 matched 】-24', matchedList)
   const first = matchedList[0]
-  // console.log('【 frist 】-24', frist)
   // 第一个路径如果不是首页，需要在匹配路径前面拼接一个首页
   if (first.path != '/home') {
-    // console.log('第一个路径不是首页，需要在匹配路径前面拼接一个首页')
     matchedList = [{ path: '/home', meta: { title: '首页' } } as any].concat(matchedList)
   }
   breadcrumbs.value = matchedList
-  console.log('【 breadcrumbs 】-28', breadcrumbs)
 }
 // 路径会发生改变，所以要用watch进行监听,// 监听路径的改变,如果发生变化了，执行方法
 watch(
