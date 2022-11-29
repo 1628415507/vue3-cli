@@ -3,13 +3,13 @@
  * @Author: Hongzf
  * @Date: 2022-11-25 09:42:54
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-29 11:12:14
+ * @LastEditTime: 2022-11-29 18:11:42
  */
 import { RouteRecordRaw } from 'vue-router'
 import Layout from '@/layout/index.vue' // 引入布局页面
 
 const constantRoutes: Array<RouteRecordRaw> = [
-  // 基础布局 TODO
+  // 基础布局
   // {
   //   path: '/home',
   //   component: Layout,

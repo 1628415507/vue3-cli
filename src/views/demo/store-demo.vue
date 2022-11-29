@@ -2,7 +2,7 @@
  * @Author: Hongzf
  * @Date: 2022-09-26 14:59:14
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-28 16:47:10
+ * @LastEditTime: 2022-11-29 17:55:11
  * @Description:
 -->
 <template>
@@ -15,7 +15,7 @@
 </template>
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { useStore } from 'vuex'
+import { useStore } from '@/store'
 let store = useStore()
 // 从计算属性中获取vuex
 // 使用state获取vuex中的值
