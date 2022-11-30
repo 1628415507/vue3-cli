@@ -2,7 +2,7 @@
  * @Author: Hongzf
  * @Date: 2022-09-26 14:59:14
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-29 17:55:11
+ * @LastEditTime: 2022-11-29 18:28:29
  * @Description:
 -->
 <template>
@@ -20,7 +20,7 @@ let store = useStore()
 // 从计算属性中获取vuex
 // 使用state获取vuex中的值
 let count = computed(() => {
-  return store.state.count.count //count模块下的count字段
+  return store.state.test.count //count模块下的count字段
 })
 // 使用getters获取vuex中的值
 let double = computed(() => {

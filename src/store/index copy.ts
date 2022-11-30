@@ -9,7 +9,7 @@ import { createStore } from 'vuex'
 // 引入app文件模块
 import app from '@/store/modules/app'
 // 引入count文件模块
-import count from '@/store/modules/count'
+import count from '@/store/modules/test'
 
 // const defaultState = {
 //   count: 0
