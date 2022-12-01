@@ -13,7 +13,7 @@ import '@/style.css'
 // 引入基础库
 import router from '@/router'
 import { store } from '@/store'
-//路由守卫，权限设置
+// 路由守卫，权限设置
 import '@/permission'
 
 // 引入UI组件库、图标

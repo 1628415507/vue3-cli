@@ -45,9 +45,9 @@ import { ref, reactive, defineProps, PropType } from 'vue'
 import { useRouter } from 'vue-router'
 
 // props
-let props = defineProps({
+const props = defineProps({
   item: {
-    type: Object, //as PropType<RouteRecordRaw>,
+    type: Object, // as PropType<RouteRecordRaw>,
     require: true,
     default: () => {}
   },

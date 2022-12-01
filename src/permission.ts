@@ -4,7 +4,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-28 16:02:18
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-29 17:57:18
+ * @LastEditTime: 2022-12-01 15:42:10
  */
 import { NavigationGuardNext, RouteLocationNormalized, RouteRecordRaw } from 'vue-router'
 import router from '@/router'
@@ -15,7 +15,6 @@ router.beforeEach(
     // console.log('【 to.path 】-40', to.path, from.path)
     const store = useStore()
     // TODO:判断是否登录
-    // TODO:ts
     const routes = store.state.app.routes
     // 有路由，说明是正常跳转
     if (routes.length) {
@@ -31,7 +30,7 @@ router.beforeEach(
       })
       console.log('【 页面刷新，重新请求动态路由菜单 】')
       // next()没有参数会出现页面空白的情况，解决办法参考：https://blog.csdn.net/i_am_father_for_/article/details/124870543
-      next({ ...to, replace: true }) //next(to.path),强制重新跳转到目标路由（中断当前路由跳转，进行新的一次跳转）
+      next({ ...to, replace: true }) // next(to.path),强制重新跳转到目标路由（中断当前路由跳转，进行新的一次跳转）
     }
   }
 )

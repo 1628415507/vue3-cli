@@ -36,8 +36,8 @@ import { asyncRoutes } from '@/router'
 
 // 定义表单数据
 const loginForm = reactive({
-  account: 'admin', //账号
-  password: '123456' //密码
+  account: 'admin', // 账号
+  password: '123456' // 密码
 })
 // 定义表单验证规则
 const validatePass = (rule: any, value: any, callback: any) => {

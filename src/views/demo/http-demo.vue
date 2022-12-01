@@ -2,20 +2,24 @@
  * @Author: Hongzf
  * @Date: 2022-11-21 09:54:25
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-22 18:25:47
+ * @LastEditTime: 2022-12-01 17:44:09
  * @Description:
 -->
 <template>
   <div>http</div>
 </template>
 <script setup lang="ts">
-import Http from '@/utils/http'
+import { onMounted } from 'vue'
+import { getMockInfo } from '@/api/mockApi'
+
 const getData = () => {
-  // const store = useStore()
-  Http.get('url').then((res: Object) => {
+  getMockInfo().then((res: Object) => {
     console.log(res)
   })
 }
+onMounted(() => {
+  getData()
+})
 </script>
 
 <style scoped></style>

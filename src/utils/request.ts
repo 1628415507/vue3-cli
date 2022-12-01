@@ -1,20 +1,20 @@
 /*
- * @Description:
+ * @Description: axios封装
  * @Author: Hongzf
  * @Date: 2022-11-21 18:51:07
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-25 11:45:18
+ * @LastEditTime: 2022-12-01 17:39:32
  */
 import axios from 'axios'
 
-// import { Message } from 'element-plus'
+import { Message } from 'element-plus'
 // 创建axios实例
 // 创建请求时可以用的配置选项
 
 const instance = axios.create({
   baseURL: '',
   withCredentials: true,
-  timeout: 1000
+  timeout: 5000
 })
 // axios的全局配置
 instance.defaults.headers.post = {
@@ -30,7 +30,7 @@ instance.defaults.headers.common = {
 // 对所有的http请求进⾏统⼀拦截，确保在请求发出之前，从本地存储中获取token，
 instance.interceptors.request.use(
   (config) => {
-    const token = '' //TODO,获取token,getToken()
+    const token = '' // TODO,获取token,getToken()
     if (token && config.headers) {
       config.headers['X-Token'] = token
     }
@@ -41,7 +41,7 @@ instance.interceptors.request.use(
   }
 )
 
-const errorHandle = (status: any, other: any) => {
+const errorHandle = (status: number, other: any) => {
   // switch (status) {
   //   case 400:
   //     // Message.error('信息校验失败')
@@ -67,15 +67,22 @@ const errorHandle = (status: any, other: any) => {
 instance.interceptors.response.use(
   // 响应包含以下信息data,status,statusText,headers,config
   (response) => {
+    console.log('【 response 】-70', response)
     const res = response.data
-    if (res.code !== 200) {
-      console.log('接口信息报错', res.message)
-      return Promise.reject(new Error(res.message || 'Error'))
+    // 请求成功
+    if (res.code === 200) {
+      if (res instanceof Blob) {
+        return Promise.resolve(response)
+      } else {
+        return Promise.resolve(res)
+      }
     } else {
-      return Promise.resolve(res)
+      console.log('接口信息报错', res.message)
+      return Promise.reject(new Error(res.message || 'Error')) // 请求失败
     }
   },
   (error) => {
+    // console.log('【 请求失败 】-82', error)
     // Message.error(err)
     // if (error) {
     // errorHandle(response.status, response.data)

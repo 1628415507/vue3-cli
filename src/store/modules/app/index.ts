@@ -14,8 +14,8 @@ import { RootState } from '@/store'
 export interface AppState {
   // 路由菜单
   // RouteRecordRaw[]等同于Array<RouteRecordRaw>,某个类型+[] 	表示语法定义类型为某个类型组成的数组
-  routes: Array<RouteRecordRaw> //固定路由+动态路由，
-  dynamicRoutes: RouteRecordRaw[] //动态路由，异步请求的路由
+  routes: Array<RouteRecordRaw> // 固定路由+动态路由，
+  dynamicRoutes: RouteRecordRaw[] // 动态路由，异步请求的路由
   // 侧边栏
   sidebar: {
     isCollapse: boolean
@@ -27,7 +27,7 @@ const state: AppState = {
   dynamicRoutes: [],
   // 侧边栏
   sidebar: {
-    isCollapse: false //是否收缩
+    isCollapse: false // 是否收缩
   }
 }
 

@@ -14,7 +14,7 @@ const asyncRoutes: Array<RouteRecordRaw> = [
   {
     path: '/home',
     component: Layout,
-    redirect: '/home', //重定向到第一个菜单
+    redirect: '/home', // 重定向到第一个菜单
     meta: { title: '首页', hidden: true },
     children: [
       {
@@ -27,7 +27,7 @@ const asyncRoutes: Array<RouteRecordRaw> = [
   // demo
   {
     path: '/demo',
-    redirect: '/router', //重定向到第一个菜单
+    redirect: '/router', // 重定向到第一个菜单
     component: Layout,
     meta: { title: '测试 demo', hidden: true },
     children: [
@@ -52,7 +52,7 @@ const asyncRoutes: Array<RouteRecordRaw> = [
   // 测试多级菜单
   {
     path: '/level',
-    redirect: '/level-1', //重定向到第一个菜单
+    redirect: '/level-1', // 重定向到第一个菜单
     component: Layout,
     meta: { title: '测试多级菜单', hidden: true },
     children: [
@@ -64,7 +64,7 @@ const asyncRoutes: Array<RouteRecordRaw> = [
       {
         path: '/level-2',
         meta: { title: '菜单1-2' },
-        redirect: '/level-2-1', //重定向到第一个菜单
+        redirect: '/level-2-1', // 重定向到第一个菜单
         component: () => import('@/views/demo/router-demo.vue'),
         children: [
           {

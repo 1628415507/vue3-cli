@@ -16,17 +16,17 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useStore } from '@/store'
-let store = useStore()
+const store = useStore()
 // 从计算属性中获取vuex
 // 使用state获取vuex中的值
-let count = computed(() => {
-  return store.state.test.count //count模块下的count字段
+const count = computed(() => {
+  return store.state.test.count // count模块下的count字段
 })
 // 使用getters获取vuex中的值
-let double = computed(() => {
+const double = computed(() => {
   return store.getters.double
 })
-let color = ref('pink') //css中使用
+const color = ref('pink') // css中使用
 // 同步
 function add() {
   store.commit('add')

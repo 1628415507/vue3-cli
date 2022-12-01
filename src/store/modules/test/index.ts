@@ -31,7 +31,7 @@ const mutations: MutationTree<CountState> = {
 const actions: ActionTree<CountState, RootState> = {
   asyncAdd({ commit }) {
     setTimeout(() => {
-      commit('add') //可以调⽤commit来执⾏mutations去更新数据。
+      commit('add') // 可以调⽤commit来执⾏mutations去更新数据。
     }, 1000)
   }
 }

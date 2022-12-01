@@ -18,7 +18,7 @@ export const asyncRoutes: Array<RouteRecordRaw> = asyncRoute
 // 创建路由实例
 const router = createRouter({
   history: createWebHashHistory(), // history 模式则使用 createWebHistory()
-  routes: constantRoute //.concat(asyncRoutes) //设置路由，动态路由需获取后通过router.addRoute添加，详见@/permission
+  routes: constantRoute // .concat(asyncRoutes) //设置路由，动态路由需获取后通过router.addRoute添加，详见@/permission
 })
 // 导出路由实例
 export default router

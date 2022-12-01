@@ -3,7 +3,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-25 17:15:35
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-29 16:53:26
+ * @LastEditTime: 2022-12-01 18:05:03
 -->
 <template>
   <el-breadcrumb :separator-icon="ArrowRight">
@@ -35,15 +35,19 @@ function handleLink(item: any) {
 // 因为 当被点击后，需要把 to （目标路由的链接，类型都是RouteLocationRaw），传到router.push()里面
 // 所以需要对 matched 进行类型的转换
 // 获取面包屑数据
-let breadcrumbs: Ref<RouteLocationMatched[]> = ref([])
+const breadcrumbs: Ref<RouteLocationMatched[]> = ref([])
 const curRoute = useRoute()
 const getBreadcrumb = () => {
   // 利用route.matched可以得到单个匹配的路径
   let matchedList = curRoute.matched.filter((item) => item.meta && item.meta.title)
   const first = matchedList[0]
   // 第一个路径如果不是首页，需要在匹配路径前面拼接一个首页
-  if (first.path != '/home') {
-    matchedList = [{ path: '/home', meta: { title: '首页' } } as any].concat(matchedList)
+  if (first.path !== '/home') {
+    const homeItem: any = {
+      path: '/home',
+      meta: { title: '首页' }
+    }
+    matchedList = [homeItem].concat(matchedList)
   }
   breadcrumbs.value = matchedList
 }

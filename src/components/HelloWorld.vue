@@ -34,8 +34,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-let count = ref(0)
-let msg = ref(0)
+const count = ref(0)
+const msg = ref(0)
 </script>
 
 <style scoped>
