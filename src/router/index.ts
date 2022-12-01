@@ -3,10 +3,10 @@
  * @Author: Hongzf
  * @Date: 2022-11-21 18:51:07
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-29 16:15:21
+ * @LastEditTime: 2022-12-01 18:13:42
  */
 
-import { createRouter, createWebHashHistory, Router, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import constantRoute from './constantRoutes' // 默认基本页面的路由
 import asyncRoute from './asyncRoutes' // 异步请求的路由
 

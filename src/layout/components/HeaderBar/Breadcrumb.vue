@@ -3,7 +3,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-25 17:15:35
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-12-01 18:05:03
+ * @LastEditTime: 2022-12-01 18:12:54
 -->
 <template>
   <el-breadcrumb :separator-icon="ArrowRight">
@@ -20,7 +20,7 @@
 
 <script lang="ts" setup>
 import { ArrowRight } from '@element-plus/icons-vue'
-import { onBeforeMount, reactive, toRefs, Ref, ref, watch } from 'vue'
+import { onBeforeMount, Ref, ref, watch } from 'vue'
 import { useRoute, useRouter, RouteLocationMatched } from 'vue-router'
 // 页面跳转
 const router = useRouter()

@@ -3,7 +3,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-25 09:22:30
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-29 14:19:32
+ * @LastEditTime: 2022-12-01 18:15:05
 -->
 <template>
   <div class="login-wrap">
@@ -30,9 +30,7 @@
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
 import type { FormInstance } from 'element-plus'
-import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
-import { asyncRoutes } from '@/router'
 
 // 定义表单数据
 const loginForm = reactive({
@@ -54,7 +52,6 @@ const rules = reactive({
 // 提交表单
 const loginFormRef = ref<FormInstance>()
 const router = useRouter() // useRoute相当于以前的this.$route
-const store = useStore()
 const submitForm = (formEl: FormInstance | undefined) => {
   if (!formEl) return
   formEl.validate((valid) => {
@@ -66,7 +63,7 @@ const submitForm = (formEl: FormInstance | undefined) => {
       // ② 或者存到localStorage
       // localStorage.setItem('menus', JSON.stringify(asyncRoutes))
       // 跳转页面
-      router.push('./home').catch((err) => {})
+      router.push('./home')
       console.log('登录成功!')
     } else {
       console.log('登录失败!')

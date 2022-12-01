@@ -3,11 +3,11 @@
  * @Author: Hongzf
  * @Date: 2022-11-21 18:51:07
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-12-01 17:39:32
+ * @LastEditTime: 2022-12-01 18:12:07
  */
 import axios from 'axios'
 
-import { Message } from 'element-plus'
+// import { Message } from 'element-plus'
 // 创建axios实例
 // 创建请求时可以用的配置选项
 

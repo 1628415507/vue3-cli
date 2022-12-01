@@ -3,7 +3,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-23 18:17:12
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-29 15:54:12
+ * @LastEditTime: 2022-12-01 18:12:47
 -->
 <template>
   <div :class="[isCollapse ? 'collapse-mode' : 'expand-mode', { 'first-level': isFirstLevel }]">
@@ -41,7 +41,7 @@
 
 <script lang="ts" setup>
 import { Menu as IconMenu } from '@element-plus/icons-vue'
-import { ref, reactive, defineProps, PropType } from 'vue'
+import { ref, reactive, defineProps } from 'vue'
 import { useRouter } from 'vue-router'
 
 // props

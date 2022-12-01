@@ -3,7 +3,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-23 18:06:18
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-29 14:19:18
+ * @LastEditTime: 2022-12-01 18:13:13
 -->
 
 <template>
@@ -35,7 +35,7 @@
 
 <script lang="ts" setup>
 import Breadcrumb from './Breadcrumb.vue'
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import { Setting, Expand, Fold } from '@element-plus/icons-vue'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
@@ -54,7 +54,7 @@ function handleSidebar() {
 const router = useRouter() // useRoute相当于以前的this.$route
 function logout() {
   router.push('./login').catch((err) => {
-    console.log('退出登录跳转失败')
+    console.log('【 退出登录跳转失败-err 】-57', err)
   })
 }
 </script>
