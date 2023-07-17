@@ -3,7 +3,7 @@
  * @Author: Hongzf
  * @Date: 2022-11-23 17:13:33
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-24 18:13:06
+ * @LastEditTime: 2022-12-02 14:12:17
 -->
 
 <template>
@@ -39,15 +39,15 @@
 <script lang="ts" setup>
 import { AsideBar, HeaderBar, Main } from './components'
 
-import { ref } from 'vue'
-// import { Menu as IconMenu, Message, Setting } from '@element-plus/icons-vue'
+// import { ref } from 'vue'
+// // import { Menu as IconMenu, Message, Setting } from '@element-plus/icons-vue'
 
-const item = {
-  date: '2016-05-02',
-  name: 'Tom',
-  address: 'No. 189, Grove St, Los Angeles'
-}
-const tableData = ref(Array.from({ length: 20 }).fill(item))
+// const item = {
+//   date: '2016-05-02',
+//   name: 'Tom',
+//   address: 'No. 189, Grove St, Los Angeles'
+// }
+// const tableData = ref(Array.from({ length: 20 }).fill(item))
 </script>
 
 <style lang="scss" scoped>

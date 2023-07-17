@@ -21,11 +21,14 @@
     "element-plus": "^2.2.22",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-vue": "^9.7.0",
+    "js-cookie": "^3.0.1",
+    "qs": "^6.11.0",
     "vue": "^3.2.41",
     "vue-router": "^4.1.6",
     "vuex": "next"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.2",
     "@types/node": "^18.11.10",
     "@vitejs/plugin-vue": "^3.2.0",
     "eslint": "^8.27.0",

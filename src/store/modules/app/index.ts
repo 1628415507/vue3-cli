@@ -3,13 +3,14 @@
  * @Author: Hongzf
  * @Date: 2022-11-21 18:51:07
  * @LastEditors: Hongzf
- * @LastEditTime: 2022-11-29 18:03:45
+ * @LastEditTime: 2022-12-15 18:31:37
  */
 import { ActionTree, Module, MutationTree } from 'vuex'
 import { RouteRecordRaw } from 'vue-router'
 import { constantRoutes, asyncRoutes } from '@/router'
 import { RootState } from '@/store'
-
+import { queryResource } from '@/api/user'
+import { filterAsyncRoutes } from './methods'
 // 定义数据类型
 export interface AppState {
   // 路由菜单
@@ -47,9 +48,33 @@ const mutations: MutationTree<AppState> = {
 // 定义actions：异步修改数据
 // actions的类型ActionTree<S, R>接收了两个泛型。并且也将这两个泛型分别应用在本模块state上和根state上
 const actions: ActionTree<AppState, RootState> = {
+  // 设置路由
   ACTION_SET_ROUTES({ commit }) {
+    // return new Promise(async(resolve) => {
+    //   queryResource({
+    //     clientId: process.env.VUE_APP_CLIENT_ID,
+    //     uemUserId: store.getters.userId
+    //   }).then((res) => {
+    //     const routes = res.data
+    //     // const map = new Map(Object.entries(routes))
+    //     // const newList = formatData(map)
+    //     const accessedRoutes = filterAsyncRoutes(routes)
+    //     // console.log('【 ==== accessedRoutes ===== 】-117', accessedRoutes)
+    //     commit('SET_ROUTES', accessedRoutes)
+    //     resolve(accessedRoutes)
+    //   })
+    // })
     console.log('【 ACTION_SET_ROUTES-动态路由赋值 】-49')
-    // TODO:调取接口获取动态路由
+    let routes: any = []
+    // 调取接口获取动态路由
+    queryResource().then((res) => {
+      // console.log('【 res 】-55', res)
+      routes = filterAsyncRoutes(res.data)
+      console.log('【 routes2 】-58', routes)
+      // debugger TODO
+      // commit('SET_ROUTES', asyncRoutes)
+    })
+    console.log('【 routes 】-58', routes)
     commit('SET_ROUTES', asyncRoutes)
   }
 }

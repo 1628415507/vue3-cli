@@ -2,18 +2,20 @@
  * @Description: axios封装
  * @Author: Hongzf
  * @Date: 2022-11-21 18:51:07
- * @LastEditors: Hongzf
- * @LastEditTime: 2022-12-01 18:12:07
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2023-07-17 16:44:35
  */
 import axios from 'axios'
+import { getToken } from '@/utils/cookies'
 
 // import { Message } from 'element-plus'
 // 创建axios实例
 // 创建请求时可以用的配置选项
 
 const instance = axios.create({
-  baseURL: '',
-  withCredentials: true,
+  // TODO
+  baseURL: '/',
+  // withCredentials: true,
   timeout: 5000
 })
 // axios的全局配置
@@ -23,6 +25,7 @@ instance.defaults.headers.post = {
 instance.defaults.headers.common = {
   'Auth-Type': 'company-web',
   'X-Requested-With': 'XMLHttpRequest',
+  // TODO
   token: 'sdfjlsdfjlsdjflsjflsfjlskd'
 }
 
@@ -30,9 +33,9 @@ instance.defaults.headers.common = {
 // 对所有的http请求进⾏统⼀拦截，确保在请求发出之前，从本地存储中获取token，
 instance.interceptors.request.use(
   (config) => {
-    const token = '' // TODO,获取token,getToken()
+    const token = getToken() // 获取token
     if (token && config.headers) {
-      config.headers['X-Token'] = token
+      config.headers['X-Token'] = getToken()
     }
     return config
   },

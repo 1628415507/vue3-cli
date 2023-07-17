@@ -2,8 +2,8 @@
  * @Description: 登录页
  * @Author: Hongzf
  * @Date: 2022-11-25 09:22:30
- * @LastEditors: Hongzf
- * @LastEditTime: 2022-12-01 18:15:05
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2023-07-17 17:11:37
 -->
 <template>
   <div class="login-wrap">
@@ -31,10 +31,13 @@
 import { reactive, ref } from 'vue'
 import type { FormInstance } from 'element-plus'
 import { useRouter } from 'vue-router'
+import { login } from '@/api/user'
+import { removeToken, setToken } from '@/utils/cookies'
+// import qs from 'qs'
 
 // 定义表单数据
 const loginForm = reactive({
-  account: 'admin', // 账号
+  account: 'test', // 账号
   password: '123456' // 密码
 })
 // 定义表单验证规则
@@ -63,8 +66,17 @@ const submitForm = (formEl: FormInstance | undefined) => {
       // ② 或者存到localStorage
       // localStorage.setItem('menus', JSON.stringify(asyncRoutes))
       // 跳转页面
-      router.push('./home')
-      console.log('登录成功!')
+      const params = JSON.stringify({
+        username: loginForm.account, // 账号
+        password: loginForm.password // 密码
+      })
+
+      login(params).then((res) => {
+        console.log('【 login-res 】-68', res)
+        router.push('./home')
+        setToken(res.data.accessToken)
+        console.log('登录成功!')
+      })
     } else {
       console.log('登录失败!')
       return false
